@@ -1,0 +1,143 @@
+[
+ {
+  "name": "dry heartbeat",
+  "hex": "8400000000000082",
+  "js": {
+   "wet": false,
+   "pump_running": false,
+   "selftest_ok": true,
+   "low_battery": false,
+   "sensor_fault": false,
+   "msg_type": "heartbeat",
+   "level_mm": 0,
+   "rate_mm_min": 0.0,
+   "pump_current_a": 0.0,
+   "pump_run_s": 0,
+   "pump_starts_1h": 0,
+   "battery_v": 3.3
+  }
+ },
+ {
+  "name": "first water, rising",
+  "hex": "45000c0300000081",
+  "js": {
+   "wet": true,
+   "pump_running": false,
+   "selftest_ok": true,
+   "low_battery": false,
+   "sensor_fault": false,
+   "msg_type": "alarm",
+   "level_mm": 12,
+   "rate_mm_min": 1.5,
+   "pump_current_a": 0.0,
+   "pump_run_s": 0,
+   "pump_starts_1h": 0,
+   "battery_v": 3.29
+  }
+ },
+ {
+  "name": "pump running normal",
+  "hex": "47002dff2a1e0364",
+  "js": {
+   "wet": true,
+   "pump_running": true,
+   "selftest_ok": true,
+   "low_battery": false,
+   "sensor_fault": false,
+   "msg_type": "alarm",
+   "level_mm": 45,
+   "rate_mm_min": -0.5,
+   "pump_current_a": 4.2,
+   "pump_run_s": 60,
+   "pump_starts_1h": 3,
+   "battery_v": 3.0
+  }
+ },
+ {
+  "name": "pump dry run",
+  "hex": "8200000008020064",
+  "js": {
+   "wet": false,
+   "pump_running": true,
+   "selftest_ok": false,
+   "low_battery": false,
+   "sensor_fault": false,
+   "msg_type": "heartbeat",
+   "level_mm": 0,
+   "rate_mm_min": 0.0,
+   "pump_current_a": 0.8,
+   "pump_run_s": 4,
+   "pump_starts_1h": 0,
+   "battery_v": 3.0
+  }
+ },
+ {
+  "name": "sensor fault no level",
+  "hex": "1cffff000000002d",
+  "js": {
+   "wet": false,
+   "pump_running": false,
+   "selftest_ok": true,
+   "low_battery": true,
+   "sensor_fault": true,
+   "msg_type": "periodic",
+   "level_mm": null,
+   "rate_mm_min": 0.0,
+   "pump_current_a": 0.0,
+   "pump_run_s": 0,
+   "pump_starts_1h": 0,
+   "battery_v": 2.45
+  }
+ },
+ {
+  "name": "fast fall clamp",
+  "hex": "04012c8000000064",
+  "js": {
+   "wet": false,
+   "pump_running": false,
+   "selftest_ok": true,
+   "low_battery": false,
+   "sensor_fault": false,
+   "msg_type": "periodic",
+   "level_mm": 300,
+   "rate_mm_min": -64.0,
+   "pump_current_a": 0.0,
+   "pump_run_s": 0,
+   "pump_starts_1h": 0,
+   "battery_v": 3.0
+  }
+ },
+ {
+  "name": "max values clamp",
+  "hex": "05fffe7fffffffff",
+  "js": {
+   "wet": true,
+   "pump_running": false,
+   "selftest_ok": true,
+   "low_battery": false,
+   "sensor_fault": false,
+   "msg_type": "periodic",
+   "level_mm": 65534,
+   "rate_mm_min": 63.5,
+   "pump_current_a": 25.5,
+   "pump_run_s": 510,
+   "pump_starts_1h": 255,
+   "battery_v": 4.55
+  }
+ },
+ {
+  "name": "too short",
+  "hex": "0000",
+  "error": true
+ },
+ {
+  "name": "reserved bit",
+  "hex": "2000000000000000",
+  "error": true
+ },
+ {
+  "name": "message type 3",
+  "hex": "c000000000000000",
+  "error": true
+ }
+]

@@ -1,0 +1,25 @@
+{
+  "_note": "Public landmarks only (coordinates approximate, +-50 m). Cellar parameters are ASSUMED generic values, not real buildings.",
+  "sites": [
+    {"id": "gve-hotel-de-ville", "name": "Geneve, Hotel de Ville (public building)", "lat": 46.2046, "lon": 6.1478, "station": "GVE", "opening": "light_well", "sill_mm": 100},
+    {"id": "lug-palazzo-civico", "name": "Lugano, Palazzo Civico (public building)", "lat": 46.0053, "lon": 8.9524, "station": "LUG", "opening": "light_well", "sill_mm": 100},
+    {"id": "stg-hauptbahnhof", "name": "St. Gallen, main station (public building)", "lat": 47.4234, "lon": 9.3695, "station": "STG", "opening": "light_well", "sill_mm": 100},
+    {"id": "luz-bahnhof", "name": "Luzern, main station (public building)", "lat": 47.0502, "lon": 8.3105, "station": "LUZ", "opening": "light_well", "sill_mm": 100},
+    {"id": "zrh-letzigrund", "name": "Zuerich, Letzigrund stadium (public building)", "lat": 47.3825, "lon": 8.5047, "station": "SMA", "opening": "light_well", "sill_mm": 100},
+    {"id": "zrh-stadthaus", "name": "Zuerich, Stadthaus (public building, low-exposure control)", "lat": 47.3667, "lon": 8.5420, "station": "SMA", "opening": "light_well", "sill_mm": 100}
+  ],
+  "stations": {
+    "GVE": {"name": "Geneve / Cointrin", "lat": 46.247519, "lon": 6.127742},
+    "LUG": {"name": "Lugano", "lat": 46.004217, "lon": 8.960322},
+    "STG": {"name": "St. Gallen", "lat": 47.425475, "lon": 9.398528},
+    "LUZ": {"name": "Luzern", "lat": 47.036439, "lon": 8.301022},
+    "SMA": {"name": "Zuerich / Fluntern", "lat": 47.381003, "lon": 8.567194}
+  },
+  "storms": [
+    {"station": "GVE", "date": "2023-06-29"},
+    {"station": "LUG", "date": "2021-07-28"},
+    {"station": "STG", "date": "2024-07-31"},
+    {"station": "LUZ", "date": "2022-08-26"},
+    {"station": "SMA", "date": "2026-06-30"}
+  ]
+}
