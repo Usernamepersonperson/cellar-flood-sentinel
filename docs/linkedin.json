@@ -1,33 +1,33 @@
 {
- "claim": "A 30-minute rain nowcast could warn ~17 min before a cellar sensor sees water.",
- "data_label": "open data: MeteoSwiss 10-min rain 2020-2026 + FOEN/BAFU runoff map | cellar water simulated",
- "stats": [
-  [
-   "+17 min",
-   "median lead, perfect 30-min nowcast",
-   "green"
+  "claim": "A 30-minute rain nowcast could warn ~17 min before a simulated cellar sensor sees water.",
+  "data_label": "open data: MeteoSwiss 10-min rain 2020-2026 + FOEN/BAFU runoff map | cellar water simulated",
+  "stats": [
+    [
+      "+17 min",
+      "median lead, perfect 30-min nowcast",
+      "green"
+    ],
+    [
+      "-13 min",
+      "median lead, observed rain only",
+      "amber"
+    ],
+    [
+      "33%",
+      "pre-alerts with no simulated water",
+      "accent"
+    ]
   ],
-  [
-   "-13 min",
-   "median lead, observed rain only",
-   "amber"
+  "limit": "Nowcast is a perfect-forecast bound and the cellar flooding is simulated, not claims data.",
+  "alt": "Two stacked charts of a Lugano storm on 2021-07-28. Rain bars on top with a green pre-alert line 15 minutes before the red sensor line and an amber observed-rain line 15 minutes after it; simulated cellar water level below; badge shows runoff hazard class 3.",
+  "hashtags": [
+    "#IoT",
+    "#Starkregen",
+    "#Hochwasser",
+    "#Wasserschaden",
+    "#Praevention",
+    "#LoRaWAN",
+    "#OpenSource"
   ],
-  [
-   "33%",
-   "pre-alerts with no simulated water",
-   "accent"
-  ]
- ],
- "limit": "Nowcast is a perfect-forecast bound and the cellar flooding is simulated, not claims data.",
- "alt": "Two stacked charts of a Lugano storm on 2021-07-28. Rain bars on top with a green pre-alert line 15 minutes before the red sensor line and an amber observed-rain line 15 minutes after it; simulated cellar water level below; badge shows runoff hazard class 3.",
- "hashtags": [
-  "#IoT",
-  "#Starkregen",
-  "#Hochwasser",
-  "#Wasserschaden",
-  "#Praevention",
-  "#LoRaWAN",
-  "#OpenSource"
- ],
- "post": "A cellar floods in minutes. The flood sensor in the corner only tells you after the water is already there.\n\nI built an open-source cellar flood early warning that combines three things: the federal surface-runoff hazard map for the building's surroundings, heavy-rain intensity thresholds, and a cheap water-level and sump-pump sensor over LoRaWAN (8-byte payload, JS decoder included, simulated device fleet).\n\nI replayed the heaviest-hour storm at five Swiss stations (2020-2026, MeteoSwiss 10-minute rain) against a simulated cellar at six public-building coordinates.\n\nMeasured result: a perfect 30-minute rain nowcast would warn a median 17 minutes before the simulated sensor sees water (range 14 to 18). Observed rain alone is 13 minutes late, because the 10-minute bucket closes about when the water arrives. Over seven Apr-Oct seasons the pre-alert fires 2.6 times per site and season, and 33 percent of those had no simulated water behind them. The battery estimate is 17 years at SF7, from assumed currents.\n\nWhat is not verified: the cellar flooding is simulated, not claims data. The 17 minutes is an upper bound, because I did not have a real archived nowcast. No hardware was built.\n\nIf you manage buildings or insure them: would a 15-minute pre-alert be worth a few false alarms a season?\n\nCode: https://github.com/Usernamepersonperson/cellar-flood-sentinel"
+  "post": "A cellar floods in minutes. The flood sensor in the corner only tells you after the water is already there.\n\nI built an open-source cellar flood early warning that combines three things: the federal surface-runoff hazard map for the building's surroundings, heavy-rain intensity thresholds, and a cheap water-level and sump-pump sensor over LoRaWAN (8-byte payload, JS decoder included, simulated device fleet).\n\nI replayed the heaviest-hour storm at five Swiss stations (2020-2026, MeteoSwiss 10-minute rain) against a simulated cellar at six public-building coordinates.\n\nMeasured result: a perfect 30-minute rain nowcast would warn a median 17 minutes before the simulated sensor sees water (range 14 to 18). Observed rain alone is 13 minutes late, because the 10-minute bucket closes about when the water arrives. Over seven Apr-Oct seasons the pre-alert fires 2.6 times per site and season, and 33 percent of those had no simulated water behind them. The battery estimate is 17 years at SF7, from assumed currents.\n\nWhat is not verified: the cellar flooding is simulated, not claims data. The 17 minutes is an upper bound, because I did not have a real archived nowcast. No hardware was built.\n\nIf you manage buildings or insure them: would a 15-minute pre-alert be worth a few false alarms a season?\n\nCode: https://github.com/Usernamepersonperson/cellar-flood-sentinel"
 }
