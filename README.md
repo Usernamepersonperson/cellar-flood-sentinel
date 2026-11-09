@@ -80,8 +80,8 @@ flowchart LR
 
 ## Data sources
 
-- Rain: MeteoSwiss open data, SwissMetNet automatic stations, parameter `rre150z0` (10-min precipitation, UTC), licence CC-BY. Source: MeteoSwiss, https://data.geo.admin.ch/ch.meteoschweiz.ogd-smn/ . Stations Geneve/Cointrin, Lugano, St. Gallen, Luzern, Zuerich/Fluntern; Apr-Oct 2020-2026 cached in `data/precip/`.
-- Hazard: Source: FOEN/BAFU, layer `ch.bafu.gefaehrdungskarte-oberflaechenabfluss` (Overland flow map) on geo.admin.ch, read through the WMS (the layer has no feature-query API). Classes: 0-0.1 m, 0.1-0.25 m, > 0.25 m modelled water depth for an event rarer than 100 years. The map is a coarse, unverified model and "not legally binding". 120 m tile images around each site are cached in `data/hazard/`.
+- Rain: MeteoSwiss open data, SwissMetNet automatic stations, parameter `rre150z0` (10-min precipitation, UTC), licence CC BY (STAC collection; opendata.swiss "Open use, must provide the source"). Source: MeteoSwiss, https://data.geo.admin.ch/ch.meteoschweiz.ogd-smn/ . Stations Geneve/Cointrin, Lugano, St. Gallen, Luzern, Zuerich/Fluntern; Apr-Oct 2020-2026 cached in `data/precip/`.
+- Hazard: Source: FOEN/BAFU, layer `ch.bafu.gefaehrdungskarte-oberflaechenabfluss` (Overland flow map) on geo.admin.ch, read through the WMS (the layer has no feature-query API). Classes: 0-0.1 m, 0.1-0.25 m, > 0.25 m modelled water depth for an event rarer than 100 years. The map is a coarse, unverified model and "not legally binding". 120 m tile images around each site are cached in `data/hazard/`. Terms: the FOEN dataset "Overland flow map" on opendata.swiss (WMS, WMTS and STAC resources) is published under "Open use": free use including commercial use and redistribution, source citation not required (checked 2026-11-09, https://opendata.swiss/en/dataset/gefahrdungskarte-oberflachenabfluss). The STAC field "proprietary" only means the terms are not an SPDX licence.
 - Live nowcast option: Open-Meteo 15-min precipitation forecast (CC-BY 4.0), used only by the `nowcast` command, not in any result.
 - Sites are public buildings with approximate coordinates (+-50 m); no private addresses. Cellar parameters are assumed generic values.
 
@@ -90,7 +90,7 @@ flowchart LR
 - Whether any of these storms flooded a real cellar: the water level is simulated, no claims or sensor data were used. Storm dates are the heaviest 1-h rain per station in the archive; press coverage was not checked.
 - Nowcast skill: the +17 min is a perfect-forecast bound. No archived nowcast was available, and the stitched Open-Meteo history is not a true lead-time forecast. The causal extrapolation baseline is a poor stand-in.
 - False pre-alert rate is measured against the simulation, not against real water in real cellars.
-- Hazard class depends on the exact coordinate; the licence terms for redistributing the small cached hazard tiles were not verified (the STAC entry says "proprietary"; federal geodata terms of use apply). Remove `data/hazard/` if in doubt.
+- Hazard class depends on the exact coordinate (+-50 m site positions can change the class).
 - Radio and battery numbers use assumed datasheet-typical currents; no hardware was built or tested, no ultrasonic or pump-current sensor accuracy was measured.
 - 10 min of data latency is an assumption about publication delay.
 - Station-to-site distance is 0.6 to 5 km; convective rain cells can be smaller than that.
